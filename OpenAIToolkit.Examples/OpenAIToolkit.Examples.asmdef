@@ -1,0 +1,16 @@
+{
+  "name": "OpenAIToolkit.Examples",
+  "rootNamespace": "OpenAIToolkit.Examples",
+  "references": [
+    "GUID:b1b5073421f824dce95298b2889354d0"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

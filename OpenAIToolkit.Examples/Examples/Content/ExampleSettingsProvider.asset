@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2640ff7327fa422c8f2a936990da65ad, type: 3}
+  m_Name: ExampleSettingsProvider
+  m_EditorClassIdentifier: 
+  apiKey: 
+  organization: 
+  _createCompletion: https://api.openai.com/v1/completions
+  _createChatCompletion: https://api.openai.com/v1/chat/completions
+  _createEdit: https://api.openai.com/v1/edits
+  _createImage: https://api.openai.com/v1/images/generations
+  _createImageEdit: https://api.openai.com/v1/images/edits
+  _createImageVariant: https://api.openai.com/v1/images/variations
+  _createTranscription: https://api.openai.com/v1/audio/transcriptions
+  _createTranslation: https://api.openai.com/v1/audio/translations
+  _createModeration: https://api.openai.com/v1/moderations
+  _listModels: https://api.openai.com/v1/models
+  _retrieveModel: https://api.openai.com/v1/models/{0}
+  _isLogWeb: 1

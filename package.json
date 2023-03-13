@@ -1,0 +1,19 @@
+{
+  "name": "com.alt3d.openaitoolkit",
+  "version": "0.1.0",
+  "displayName": "OpenAI Toolkit",
+  "description": "OpenAI Toolkit for Unity",
+  "unity": "2020.3",
+  "unityRelease": "28f1",
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "2.0.0"
+  },
+  "keywords": [
+    "OpenAI"
+  ],
+  "author": {
+    "name": "alt3d",
+    "email": "alt3d@yandex.ru",
+    "url": "https://github.com/alt3d/unity-openai-toolkit"
+  }
+}
