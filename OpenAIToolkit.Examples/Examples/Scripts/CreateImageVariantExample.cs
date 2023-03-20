@@ -16,7 +16,7 @@ namespace OpenAIToolkit.Examples
         {
             DeleteView();
 
-            var client = Factory.CreateClient(ApiKey);
+            var client = new OpenAIClient(ApiKey);
 
             var request = new CreateImageVariantRequest(Image) {
                 Count = Count,
@@ -32,7 +32,7 @@ namespace OpenAIToolkit.Examples
         {
             DeleteView();
 
-            var client = Factory.CreateClient(ApiKey);
+            var client = new OpenAIClient(ApiKey);
 
             var request = new CreateImageVariantRequest(Image) {
                 Count = Count,

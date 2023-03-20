@@ -6,6 +6,8 @@ namespace OpenAIToolkit
     /// </summary>
     public class RetrieveModelRequest
     {
+        /// <inheritdoc cref="RetrieveModelRequest" />
+        /// <param name="model">The ID of the model.</param>
         public RetrieveModelRequest(string model)
         {
             Model = model;

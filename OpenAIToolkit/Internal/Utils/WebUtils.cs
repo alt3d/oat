@@ -186,13 +186,9 @@ namespace OpenAIToolkit
         private static void AddAuthHeaders(Client client, UnityWebRequest webRequest)
         {
             Ensure.ArgumentNotNull(client, nameof(client));
-            Ensure.ArgumentNotNull(client.Settings, nameof(client.Settings));
-            Ensure.ArgumentNotNull(client.AuthProvider.ApiKey, nameof(client.AuthProvider.ApiKey));
+            Ensure.ArgumentNotNull(webRequest, nameof(webRequest));
 
-            webRequest.SetRequestHeader("Authorization", "Bearer " + client.AuthProvider.ApiKey);
-
-            if (!string.IsNullOrWhiteSpace(client.AuthProvider.Organization))
-                webRequest.SetRequestHeader("OpenAI-Organization", client.AuthProvider.Organization);
+            client.AuthProvider.Intercept(webRequest);
         }
 
         private static void AddRequestBody<TData>(UnityWebRequest webRequest, TData data)

@@ -64,7 +64,7 @@ namespace OpenAIToolkit
             if (Request.Temperature.HasValue)
                 requestData.AddField("temperature", Request.Temperature.Value.ToString(CultureInfo.InvariantCulture));
 
-            return WebUtils.CreatePost(Client, Client.Endpoints.CreateTranslation, requestData);
+            return WebUtils.CreatePost(Client, Client.EndpointsProvider.CreateTranslation(), requestData);
         }
 
         private CreateTranslationResponse CreateResponse(CreateTranslationResponseDto responseDto)

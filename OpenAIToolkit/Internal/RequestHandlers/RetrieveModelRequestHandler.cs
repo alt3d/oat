@@ -49,7 +49,7 @@ namespace OpenAIToolkit
 
         private UnityWebRequest CreateWebRequest()
         {
-            var url = string.Format(Client.Endpoints.RetrieveModel, Request.Model);
+            var url = Client.EndpointsProvider.RetrieveModel(Request.Model);
             return WebUtils.CreateGet(Client, url);
         }
 

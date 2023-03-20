@@ -12,7 +12,7 @@ namespace OpenAIToolkit.Examples
         [ContextMenu("Send request")]
         public void SendRequest()
         {
-            var client = Factory.CreateClient(ApiKey);
+            var client = new OpenAIClient(ApiKey);
 
             var message = new ChatMessage {
                 Role = ChatRole.User,
@@ -27,7 +27,7 @@ namespace OpenAIToolkit.Examples
         [ContextMenu("Send request async")]
         public async void SendRequestAsync()
         {
-            var client = Factory.CreateClient(ApiKey);
+            var client = new OpenAIClient(ApiKey);
 
             var message = new ChatMessage {
                 Role = ChatRole.User,

@@ -13,7 +13,7 @@ namespace OpenAIToolkit
         public void SendRequest()
         {
 #if UNITY_EDITOR
-            var client = Factory.CreateClient(ApiKey);
+            var client = new OpenAIClient(ApiKey);
             var audioClipPath = UnityEditor.AssetDatabase.GetAssetPath(AudioClip);
             audioClipPath = audioClipPath.Replace("Assets", Application.dataPath);
             var audioData = File.ReadAllBytes(audioClipPath);
@@ -28,7 +28,7 @@ namespace OpenAIToolkit
         public async void SendRequestAsync()
         {
 #if UNITY_EDITOR
-            var client = Factory.CreateClient(ApiKey);
+            var client = new OpenAIClient(ApiKey);
             var audioClipPath = UnityEditor.AssetDatabase.GetAssetPath(AudioClip);
             audioClipPath = audioClipPath.Replace("Assets", Application.dataPath);
             var audioData = File.ReadAllBytes(audioClipPath);

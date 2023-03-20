@@ -9,14 +9,14 @@ namespace OpenAIToolkit.Examples
         [ContextMenu("Send request")]
         public void SendRequest()
         {
-            var client = Factory.CreateClient(ApiKey);
+            var client = new OpenAIClient(ApiKey);
             client.Model.ListModels(HandleResponse);
         }
 
         [ContextMenu("Send request async")]
         public async void SendRequestAsync()
         {
-            var client = Factory.CreateClient(ApiKey);
+            var client = new OpenAIClient(ApiKey);
             var response = await client.Model.ListModelsAsync();
             HandleResponse(response);
         }

@@ -67,7 +67,7 @@ namespace OpenAIToolkit
                 user = Request.User
             };
 
-            return WebUtils.CreatePost(Client, Client.Endpoints.CreateCompletion, requestDto);
+            return WebUtils.CreatePost(Client, Client.EndpointsProvider.CreateCompletion(), requestDto);
         }
 
         private CreateCompletionResponse CreateResponse(CreateCompletionResponseDto responseDto)

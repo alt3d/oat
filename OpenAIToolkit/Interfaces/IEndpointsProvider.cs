@@ -8,56 +8,56 @@ namespace OpenAIToolkit
         /// <summary>
         ///     API endpoint for creating a completion.
         /// </summary>
-        string CreateCompletion { get; }
+        string CreateCompletion();
 
         /// <summary>
         ///     API endpoint for creating a chat completion.
         /// </summary>
-        string CreateChatCompletion { get; }
+        string CreateChatCompletion();
 
         /// <summary>
         ///     API endpoint for creating an edit.
         /// </summary>
-        string CreateEdit { get; }
+        string CreateEdit();
 
         /// <summary>
         ///     API endpoint for creating an image.
         /// </summary>
-        string CreateImage { get; }
+        string CreateImage();
 
         /// <summary>
         ///     API endpoint for creating an image edit.
         /// </summary>
-        string CreateImageEdit { get; }
+        string CreateImageEdit();
 
         /// <summary>
         ///     API endpoint for creating an image variant.
         /// </summary>
-        string CreateImageVariant { get; }
+        string CreateImageVariant();
 
         /// <summary>
         ///     API endpoint for creating a transcription.
         /// </summary>
-        string CreateTranscription { get; }
+        string CreateTranscription();
 
         /// <summary>
         ///     API endpoint for creating a translation.
         /// </summary>
-        string CreateTranslation { get; }
+        string CreateTranslation();
 
         /// <summary>
         ///     API endpoint for creating a moderation.
         /// </summary>
-        string CreateModeration { get; }
+        string CreateModeration();
 
         /// <summary>
         ///     API endpoint for getting list the currently available models
         /// </summary>
-        string ListModels { get; }
+        string ListModels();
 
         /// <summary>
         ///     API endpoint for retrieving a model.
         /// </summary>
-        string RetrieveModel { get; }
+        string RetrieveModel(string model);
     }
 }

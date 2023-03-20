@@ -7,33 +7,82 @@ namespace OpenAIToolkit
     public class Client
     {
         /// <inheritdoc cref="CompletionService" />
-        public CompletionService Completion { get; internal set; }
+        public CompletionService Completion { get; }
 
         /// <inheritdoc cref="ChatService" />
-        public ChatService Chat { get; internal set; }
+        public ChatService Chat { get; }
 
         /// <inheritdoc cref="EditService" />
-        public EditService Edit { get; internal set; }
+        public EditService Edit { get; }
 
         /// <inheritdoc cref="ImageService" />
-        public ImageService Image { get; internal set; }
+        public ImageService Image { get; }
 
         /// <inheritdoc cref="AudioService" />
-        public AudioService Audio { get; internal set; }
+        public AudioService Audio { get; }
 
         /// <inheritdoc cref="ModerationService" />
-        public ModerationService Moderation { get; internal set; }
+        public ModerationService Moderation { get; }
 
         /// <inheritdoc cref="ModelService" />
-        public ModelService Model { get; internal set; }
+        public ModelService Model { get; }
 
         /// <inheritdoc cref="IEndpointsProvider" />
-        public IEndpointsProvider Endpoints { get; internal set; }
+        public IEndpointsProvider EndpointsProvider { get; private set; }
 
-        /// <inheritdoc cref="IAuthenticationProvider" />
-        public IAuthenticationProvider AuthProvider { get; internal set; }
+        /// <inheritdoc cref="IAuthenticationInterceptor" />
+        public IAuthenticationInterceptor AuthProvider { get; private set; }
 
         /// <inheritdoc cref="IClientSettings" />
         public IClientSettings Settings { get; internal set; }
+
+        /// <summary>
+        ///     Create a new instance of the client
+        /// </summary>
+        public Client()
+        {
+            Completion = new CompletionService(this);
+            Edit = new EditService(this);
+            Chat = new ChatService(this);
+            Image = new ImageService(this);
+            Audio = new AudioService(this);
+            Model = new ModelService(this);
+            Moderation = new ModerationService(this);
+
+            Settings = new ClientSettings();
+        }
+
+        /// <summary>
+        ///     Set the endpoints provider
+        /// </summary>
+        /// <param name="endpointsProvider"> Endpoints provider</param>
+        /// <returns></returns>
+        public Client SetEndpointsProvider(IEndpointsProvider endpointsProvider)
+        {
+            EndpointsProvider = endpointsProvider;
+            return this;
+        }
+
+        /// <summary>
+        ///     Set the authentication interceptor
+        /// </summary>
+        /// <param name="authProvider"> Authentication interceptor</param>
+        /// <returns></returns>
+        public Client SetAuthenticationInterceptor(IAuthenticationInterceptor authProvider)
+        {
+            AuthProvider = authProvider;
+            return this;
+        }
+
+        /// <summary>
+        ///     Set the client settings
+        /// </summary>
+        /// <param name="clientSettings"> Client settings</param>
+        /// <returns></returns>
+        public Client SetClientSettings(IClientSettings clientSettings)
+        {
+            Settings = clientSettings;
+            return this;
+        }
     }
 }

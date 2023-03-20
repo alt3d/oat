@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2640ff7327fa422c8f2a936990da65ad, type: 3}
-  m_Name: ExampleSettingsProvider
+  m_Name: CustomSettingsProvider
   m_EditorClassIdentifier: 
-  apiKey: 
-  organization: 
+  _apiKey: 
+  _organization: 
   _createCompletion: https://api.openai.com/v1/completions
   _createChatCompletion: https://api.openai.com/v1/chat/completions
   _createEdit: https://api.openai.com/v1/edits

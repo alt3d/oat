@@ -69,7 +69,7 @@ namespace OpenAIToolkit
             if (Request.Size != null)
                 requestDto.size = Request.Size.Value.GetStringValue();
 
-            return WebUtils.CreatePost(Client, Client.Endpoints.CreateImage, requestDto);
+            return WebUtils.CreatePost(Client, Client.EndpointsProvider.CreateImage(), requestDto);
         }
 
         private CreateImageResponse CreateResponse(ImageResponseDto responseDto)

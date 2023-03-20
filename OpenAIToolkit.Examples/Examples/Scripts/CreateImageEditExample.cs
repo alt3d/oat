@@ -18,7 +18,7 @@ namespace OpenAIToolkit.Examples
         {
             DeleteView();
 
-            var client = Factory.CreateClient(ApiKey);
+            var client = new OpenAIClient(ApiKey);
 
             var request = new CreateImageEditRequest(Image, Prompt) {
                 Mask = Mask,
@@ -35,7 +35,7 @@ namespace OpenAIToolkit.Examples
         {
             DeleteView();
 
-            var client = Factory.CreateClient(ApiKey);
+            var client = new OpenAIClient(ApiKey);
 
             var request = new CreateImageEditRequest(Image, Prompt) {
                 Mask = Mask,

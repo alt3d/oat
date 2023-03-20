@@ -63,7 +63,7 @@ namespace OpenAIToolkit
                 user = Request.User
             };
 
-            return WebUtils.CreatePost(Client, Client.Endpoints.CreateChatCompletion, requestDto);
+            return WebUtils.CreatePost(Client, Client.EndpointsProvider.CreateChatCompletion(), requestDto);
         }
 
         private CreateChatCompletionResponse CreateResponse(CreateChatCompletionResponseDto responseDto)

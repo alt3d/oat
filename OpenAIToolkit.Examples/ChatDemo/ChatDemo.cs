@@ -26,7 +26,7 @@ namespace OpenAIToolkit.Examples
         {
             Messages = new List<ChatMessage>();
             OutputText.text = string.Empty;
-            Client = Factory.CreateClient(ApiKey);
+            Client = new OpenAIClient(ApiKey);
         }
 
         public void SendRequest()

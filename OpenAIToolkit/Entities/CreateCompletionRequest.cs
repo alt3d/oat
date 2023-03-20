@@ -115,7 +115,7 @@ namespace OpenAIToolkit
         ///     sequence.
         /// </summary>
         /// <remarks>Defaults to null</remarks>
-        public List<string> Stop { get; set; } // TODO To array
+        public List<string> Stop { get; set; }
 
         /// <summary>
         ///     Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far,

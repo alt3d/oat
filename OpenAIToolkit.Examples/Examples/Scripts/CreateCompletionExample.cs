@@ -11,7 +11,7 @@ namespace OpenAIToolkit.Examples
         [ContextMenu("Send request")]
         public void SendRequest()
         {
-            var client = Factory.CreateClient(ApiKey);
+            var client = new OpenAIClient(ApiKey);
             var request = new CreateCompletionRequest(Model, Prompt);
             client.Completion.CreateCompletion(request, HandleResponse);
         }
@@ -19,7 +19,7 @@ namespace OpenAIToolkit.Examples
         [ContextMenu("Send request async")]
         public async void SendRequestAsync()
         {
-            var client = Factory.CreateClient(ApiKey);
+            var client = new OpenAIClient(ApiKey);
             var request = new CreateCompletionRequest(Model, Prompt);
             var response = await client.Completion.CreateCompletionAsync(request);
             HandleResponse(response);

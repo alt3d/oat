@@ -58,7 +58,7 @@ namespace OpenAIToolkit
                 user = Request.User
             };
 
-            return WebUtils.CreatePost(Client, Client.Endpoints.CreateEdit, requestDto);
+            return WebUtils.CreatePost(Client, Client.EndpointsProvider.CreateEdit(), requestDto);
         }
 
         private CreateEditResponse CreateResponse(CreateEditResponseDto responseDto)

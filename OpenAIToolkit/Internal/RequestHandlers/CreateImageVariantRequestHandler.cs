@@ -71,7 +71,7 @@ namespace OpenAIToolkit
             if (Request.User != null)
                 requestData.AddField("user", Request.User);
 
-            return WebUtils.CreatePost(Client, Client.Endpoints.CreateImageVariant, requestData);
+            return WebUtils.CreatePost(Client, Client.EndpointsProvider.CreateImageVariant(), requestData);
         }
 
         private CreateImageVariantResponse CreateResponse(ImageResponseDto responseDto)

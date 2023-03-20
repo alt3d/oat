@@ -11,7 +11,7 @@ namespace OpenAIToolkit.Examples
         [ContextMenu("Send request")]
         public void SendRequest()
         {
-            var client = Factory.CreateClient(ApiKey);
+            var client = new OpenAIClient(ApiKey);
             var request = new CreateModerationRequest(Model, Input);
             client.Moderation.CreateModeration(request, HandleResponse);
         }
@@ -19,7 +19,7 @@ namespace OpenAIToolkit.Examples
         [ContextMenu("Send request async")]
         public async void SendRequestAsync()
         {
-            var client = Factory.CreateClient(ApiKey);
+            var client = new OpenAIClient(ApiKey);
             var request = new CreateModerationRequest(Model, Input);
             var response = await client.Moderation.CreateModerationAsync(request);
             HandleResponse(response);

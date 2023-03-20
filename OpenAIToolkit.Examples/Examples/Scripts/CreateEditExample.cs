@@ -12,7 +12,7 @@ namespace OpenAIToolkit.Examples
         [ContextMenu("Send request")]
         public void SendRequest()
         {
-            var client = Factory.CreateClient(ApiKey);
+            var client = new OpenAIClient(ApiKey);
             var request = new CreateEditRequest(Model, Input, Instruction);
             client.Edit.CreateEdit(request, HandleResponse);
         }
@@ -20,7 +20,7 @@ namespace OpenAIToolkit.Examples
         [ContextMenu("Send request async")]
         public async void SendRequestAsync()
         {
-            var client = Factory.CreateClient(ApiKey);
+            var client = new OpenAIClient(ApiKey);
             var request = new CreateEditRequest(Model, Input, Instruction);
             var response = await client.Edit.CreateEditAsync(request);
             HandleResponse(response);

@@ -54,7 +54,7 @@ namespace OpenAIToolkit
                 input = Request.Input
             };
 
-            return WebUtils.CreatePost(Client, Client.Endpoints.CreateModeration, requestDto);
+            return WebUtils.CreatePost(Client, Client.EndpointsProvider.CreateModeration(), requestDto);
         }
 
         private CreateModerationResponse CreateResponse(CreateModerationResponseDto responseDto)

@@ -16,7 +16,7 @@ namespace OpenAIToolkit.Examples
         {
             DeleteView();
 
-            var client = Factory.CreateClient(ApiKey);
+            var client = new OpenAIClient(ApiKey);
 
             var request = new CreateImageRequest(Prompt) {
                 ResponseFormat = ResponseFormat,
@@ -32,7 +32,7 @@ namespace OpenAIToolkit.Examples
         {
             DeleteView();
 
-            var client = Factory.CreateClient(ApiKey);
+            var client = new OpenAIClient(ApiKey);
 
             var request = new CreateImageRequest(Prompt) {
                 ResponseFormat = ResponseFormat,

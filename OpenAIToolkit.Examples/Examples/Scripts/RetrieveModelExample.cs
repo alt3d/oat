@@ -10,7 +10,7 @@ namespace OpenAIToolkit.Examples
         [ContextMenu("Send request")]
         public void SendRequest()
         {
-            var client = Factory.CreateClient(ApiKey);
+            var client = new OpenAIClient(ApiKey);
             var request = new RetrieveModelRequest(ModelId);
             client.Model.RetrieveModel(request, HandleResponse);
         }
@@ -18,7 +18,7 @@ namespace OpenAIToolkit.Examples
         [ContextMenu("Send request async")]
         public async void SendRequestAsync()
         {
-            var client = Factory.CreateClient(ApiKey);
+            var client = new OpenAIClient(ApiKey);
             var request = new RetrieveModelRequest(ModelId);
             var response = await client.Model.RetrieveModelAsync(request);
             HandleResponse(response);

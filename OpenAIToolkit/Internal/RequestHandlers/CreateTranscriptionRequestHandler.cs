@@ -67,7 +67,7 @@ namespace OpenAIToolkit
             if (!string.IsNullOrWhiteSpace(Request.Language))
                 requestData.AddField("language", Request.Language);
 
-            return WebUtils.CreatePost(Client, Client.Endpoints.CreateTranscription, requestData);
+            return WebUtils.CreatePost(Client, Client.EndpointsProvider.CreateTranscription(), requestData);
         }
 
         private CreateTranscriptionResponse CreateResponse(CreateTranscriptionResponseDto responseDto)
