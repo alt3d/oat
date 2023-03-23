@@ -6,6 +6,22 @@ namespace OpenAIToolkit
     /// </summary>
     public class Client
     {
+        /// <summary>
+        ///     Create a new instance of the client
+        /// </summary>
+        public Client()
+        {
+            Completion = new CompletionService(this);
+            Edit = new EditService(this);
+            Chat = new ChatService(this);
+            Image = new ImageService(this);
+            Audio = new AudioService(this);
+            Model = new ModelService(this);
+            Moderation = new ModerationService(this);
+
+            Settings = new ClientSettings();
+        }
+
         /// <inheritdoc cref="CompletionService" />
         public CompletionService Completion { get; }
 
@@ -35,22 +51,6 @@ namespace OpenAIToolkit
 
         /// <inheritdoc cref="IClientSettings" />
         public IClientSettings Settings { get; internal set; }
-
-        /// <summary>
-        ///     Create a new instance of the client
-        /// </summary>
-        public Client()
-        {
-            Completion = new CompletionService(this);
-            Edit = new EditService(this);
-            Chat = new ChatService(this);
-            Image = new ImageService(this);
-            Audio = new AudioService(this);
-            Model = new ModelService(this);
-            Moderation = new ModerationService(this);
-
-            Settings = new ClientSettings();
-        }
 
         /// <summary>
         ///     Set the endpoints provider

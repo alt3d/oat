@@ -6,8 +6,8 @@ Open AI API wrapper for Unity.
 
 Features:
 * All Unity build platforms support.
-* Async and non-async methods.
 * Unity specific types integration. Responses for image requests contains Texture2D, for example.
+* Async and non-async methods.
 * The syntax follows the OpenAI documentation as closely as possible.
 * Extensive xml documentation. Every single class, method and property is covered by comments
 * Every request has a simple example of integration.
@@ -36,6 +36,7 @@ OpenAI API coverage:
     * Once downloaded, import package into the Unity project.
 
 ## References
-[Unity OpenAI Toolkit code references](https://unityopenaitoolkit.com/code-reference/)</br>
+[Unity OpenAI Toolkit Site](https://unityopenaitoolkit.com/)</br>
+[Unity OpenAI Toolkit Code Reference](https://unityopenaitoolkit.com/code-reference/)</br>
 [OpenAI's API Documentation](https://platform.openai.com/docs/introduction/overview)</br>
 [OpenAI's API Reference](https://platform.openai.com/docs/api-reference/introduction)

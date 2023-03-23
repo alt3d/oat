@@ -1,6 +1,6 @@
 {
   "name": "com.alt3d.openaitoolkit",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "displayName": "OpenAI Toolkit",
   "description": "OpenAI Toolkit for Unity",
   "unity": "2020.3",

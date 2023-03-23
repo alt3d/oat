@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -55,14 +54,14 @@ namespace OpenAIToolkit
                 LogResponse(webRequest);
 
             var responseText = webRequest.downloadHandler.text;
-            var errorDto = JsonConvert.DeserializeObject<ErrorDto>(responseText);
+            var errorDto = Serializer.FromJson<ErrorDto>(responseText);
             if (errorDto?.error != null && !string.IsNullOrWhiteSpace(errorDto.error.message))
             {
                 var error = errorDto.Parse();
                 return (null, error);
             }
 
-            var responseDto = JsonConvert.DeserializeObject<TResponse>(responseText);
+            var responseDto = Serializer.FromJson<TResponse>(responseText);
             return (responseDto, null);
         }
 
@@ -142,7 +141,7 @@ namespace OpenAIToolkit
                     LogResponse(webRequest);
 
                 var responseText = webRequest.downloadHandler.text;
-                var errorDto = JsonConvert.DeserializeObject<ErrorDto>(responseText);
+                var errorDto = Serializer.FromJson<ErrorDto>(responseText);
                 if (errorDto?.error != null && !string.IsNullOrWhiteSpace(errorDto.error.message))
                 {
                     var error = errorDto.Parse();
@@ -150,7 +149,7 @@ namespace OpenAIToolkit
                 }
                 else
                 {
-                    var responseDto = JsonConvert.DeserializeObject<TResponse>(responseText);
+                    var responseDto = Serializer.FromJson<TResponse>(responseText);
                     onSuccess?.Invoke(responseDto);
                 }
             }
@@ -158,29 +157,29 @@ namespace OpenAIToolkit
 
         private static void LogRequest(UnityWebRequest webRequest)
         {
-            var textForLog = $"Request sent. Url: {webRequest.url}";
+            var logMessage = $"Request sent. Url: {webRequest.url}";
 
             var dataBytes = webRequest.uploadHandler?.data;
             if (dataBytes != null)
             {
                 var dataJson = Encoding.UTF8.GetString(dataBytes);
-                textForLog += $"\n Data: {dataJson}";
+                logMessage += $"\n Data: {dataJson}";
             }
 
-            textForLog += "\n";
-            Debug.Log(textForLog);
+            logMessage += "\n";
+            Debug.Log($"[OpenAIToolkit] {logMessage}");
         }
 
         private static void LogResponse(UnityWebRequest webRequest)
         {
-            var textForLog = $"Response received. Url: {webRequest.url}";
+            var logMessage = $"Response received. Url: {webRequest.url}";
 
             var dataJson = webRequest.downloadHandler?.text;
             if (!string.IsNullOrWhiteSpace(dataJson))
-                textForLog += $"\n Data: {dataJson}";
+                logMessage += $"\n Data: {dataJson}";
 
-            textForLog += "\n";
-            Debug.Log(textForLog);
+            logMessage += "\n";
+            Debug.Log($"[OpenAIToolkit] {logMessage}");
         }
 
         private static void AddAuthHeaders(Client client, UnityWebRequest webRequest)
@@ -195,7 +194,7 @@ namespace OpenAIToolkit
         {
             webRequest.SetRequestHeader("Content-Type", "application/json");
 
-            var dataJson = JsonConvert.SerializeObject(data);
+            var dataJson = Serializer.ToJson(data);
             var dataBytes = new UTF8Encoding().GetBytes(dataJson);
             webRequest.uploadHandler = new UploadHandlerRaw(dataBytes);
         }

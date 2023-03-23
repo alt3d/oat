@@ -199,7 +199,7 @@ namespace OpenAIToolkit
                     Categories = new ModerationCategories {
                         Hate = categoriesDto.hate,
                         HateThreatening = categoriesDto.hatethreatening,
-                        SelfHarm = categoriesDto.hatethreatening,
+                        SelfHarm = categoriesDto.selfharm,
                         Sexual = categoriesDto.sexual,
                         SexualMinors = categoriesDto.sexualminors,
                         Violence = categoriesDto.violence,
