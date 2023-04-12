@@ -1,6 +1,6 @@
 {
   "name": "com.alt3d.openaitoolkit",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "displayName": "OpenAI Toolkit",
   "description": "OpenAI Toolkit for Unity",
   "unity": "2020.3",
@@ -15,5 +15,37 @@
     "name": "alt3d",
     "email": "alt3d@yandex.ru",
     "url": "https://github.com/alt3d/unity-openai-toolkit"
-  }
+  },
+  "samples": [
+    {
+      "displayName": "Chat example",
+      "description": "ChatGPT example using chat completion API.",
+      "path": "Samples~/ChatExample"
+    },
+    {
+      "displayName": "Custom server example",
+      "description": "Custom server implementation example",
+      "path": "Samples~/CustomServerExample"
+    },
+    {
+      "displayName": "Audio samples",
+      "description": "Audio samples",
+      "path": "Samples~/AudioSamples"
+    },
+    {
+      "displayName": "Image samples",
+      "description": "Image samples",
+      "path": "Samples~/ImageSamples"
+    },
+    {
+      "displayName": "Text samples",
+      "description": "Text samples",
+      "path": "Samples~/TextSamples"
+    },
+    {
+      "displayName": "Other samples",
+      "description": "Other samples",
+      "path": "Samples~/OtherSamples"
+    }
+  ]
 }

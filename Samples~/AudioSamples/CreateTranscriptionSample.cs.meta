@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: b90f90b835a94a2ba79bc12bbe811a6e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - AudioClip: {fileID: 8300000, guid: 2e4625917e0834e819d119fb8818eb1f, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
