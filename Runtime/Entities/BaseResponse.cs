@@ -3,7 +3,7 @@ namespace OpenAIToolkit
     /// <summary>
     ///     Base abstract class for response.
     /// </summary>
-    public class BaseResponse
+    public class BaseRespons2e
     {
         /// <summary>
         ///     The error details in case of a failed response.
